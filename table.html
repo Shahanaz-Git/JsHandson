@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Table Example</title>
+</head>
+<body>
+
+<h2>Sample Data Table</h2>
+
+<table id="dataTable" border="1"> <!-- Table with border -->
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+	<tbody id="data"> <!-- This is where data will be inserted -->
+        <!-- Data rows will be added here by JavaScript -->
+    </tbody>
+</table>
+<script>
+// Sample data
+const users = [
+    { name: "John Doe", username: "johndoe", email: "johndoe@example.com" },
+    { name: "Jane Smith", username: "janesmith", email: "janesmith@example.com" }
+];
+
+// Get the table body element
+const 
+ = document.getElementById('data');
+
+// Loop through the users and add them to the table
+users.forEach(function(user) {
+    const row = document.createElement('tr'); // Create a new row
+
+    const nameCell = document.createElement('td'); // Create cell for name
+    const usernameCell = document.createElement('td'); // Create cell for username
+    const emailCell = document.createElement('td'); // Create cell for email
+
+    nameCell.textContent = user.name; // Set name
+    usernameCell.textContent = user.username; // Set username
+    emailCell.textContent = user.email; // Set email
+
+    row.appendChild(nameCell); // Add name cell to the row
+    row.appendChild(usernameCell); // Add username cell to the row
+    row.appendChild(emailCell); // Add email cell to the row
+
+    tableBody.appendChild(row); // Add the row to the table body
+});
+
+</script>
+</body>
+</html>

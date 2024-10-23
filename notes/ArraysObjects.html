@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+<!--  Arrays -->
+let courses = ["HTML","CSS","JS"];
+for(i=0;i<courses.length;i++){
+	document.getElementById("demo").innerHTML += courses[i]+ "</br>";
+	console.log(courses[i]);
+}
+<!--  Objects -->
+const person = {firstName:"John", lastName:"Doe", age:46};
+ document.getElementById("demo1").innerHTML = person.firstName+ "is" + person.age+"years old";
+<!--  For Each -->
+const arr = [1, 2, 3, 4, 5];
+
+arr.forEach((item) => {
+    console.log(item);
+	document.getElementById("demo2").innerHTML += item +"</br>";
+});
+// For each copy
+const items = [12, 24, 36];
+const copy = [];
+
+items.forEach(function (item) {
+    copy.push(item);
+});
+
+console.log(copy);
+
+// For each multiply array
+const Nitems = [1, 4, 5];
+const squareOfItems = [];
+
+Nitems.forEach(function (item) {
+    squareOfItems.push(item * item);
+});
+console.log(Nitems);
+console.log(squareOfItems);
+</script>
+</body>
+</html>

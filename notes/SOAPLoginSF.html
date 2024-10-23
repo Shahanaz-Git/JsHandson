@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce SOAP Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Salesforce SOAP Login Test</h1>
+    <button id="loginButton">Login to Salesforce</button>
+
+    <div class="result">
+        <h2>Result:</h2>
+        <p><strong>Session ID:</strong> <span id="sessionId"></span></p>
+        <p><strong>Server URL:</strong> <span id="serverUrl"></span></p>
+        <p><strong>Error:</strong> <span id="errorMessage"></span></p>
+    </div>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', salesforceLogin);
+
+        async function salesforceLogin() {
+            const soapMessage = `
+                <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:enterprise.soap.sforce.com">
+                  <soapenv:Header></soapenv:Header>
+                  <soapenv:Body>
+                    <urn:login>
+                      <urn:username>shannu1517@gmail.com</urn:username>
+                      <urn:password>Myorg@786</urn:password>
+                    </urn:login>
+                  </soapenv:Body>
+                </soapenv:Envelope>`;
+
+            try {
+                const response = await fetch('https://login.salesforce.com/services/Soap/c/61.0/0DFdL000001Kg49', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/xml',
+                        'SOAPAction': 'login'
+                    },
+                    body: soapMessage
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const responseText = await response.text();
+                
+                // Parse the XML response to extract sessionId and serverUrl
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(responseText, 'application/xml');
+
+                const sessionId = xmlDoc.getElementsByTagName('sessionId')[0]?.textContent || 'Not found';
+                const serverUrl = xmlDoc.getElementsByTagName('serverUrl')[0]?.textContent || 'Not found';
+
+                document.getElementById('sessionId').textContent = sessionId;
+                document.getElementById('serverUrl').textContent = serverUrl;
+                document.getElementById('errorMessage').textContent = '';
+            } catch (error) {
+                console.error('Error during Salesforce login:', error);
+                document.getElementById('errorMessage').textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>

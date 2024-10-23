@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Table Example</title>
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Static Table</h2>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 3, Cell 1</td>
+            <td>Row 3, Cell 2</td>
+            <td>Row 3, Cell 3</td>
+        </tr>
+    </table>
+	
+	<h2>Dynamic Table</h2>
+	<table id="dynamicTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+	<script>
+        const data = [
+            { id: 1, name: "Alice", age: 25 },
+            { id: 2, name: "Bob", age: 30 },
+            { id: 3, name: "Charlie", age: 22 }
+        ];
+
+        const table = document.getElementById('dynamicTable');
+
+        data.forEach((item) => {
+            const row = table.insertRow();
+            row.insertCell(0).innerHTML = item.id;
+            row.insertCell(1).innerHTML = item.name;
+            row.insertCell(2).innerHTML = item.age;
+        });
+    </script>
+	
+ <h2>Dynamic Table 1</h2>
+<table id="dynamicTable1" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+</table>
+
+<script>
+    // Renaming 'data' to 'tableData' to avoid conflicts
+    const tableData = [
+        { id: 1, name: "Alice", age: 25 },
+        { id: 2, name: "Bob", age: 30 },
+        { id: 3, name: "Charlie", age: 22 }
+    ];
+
+    const table1 = document.getElementById('dynamicTable1');
+
+    // Renaming 'item' to 'rowData' to avoid conflicts
+    tableData.forEach((rowData) => {
+        const row1 = document.createElement('tr');
+        row1.innerHTML = `<td>${rowData.id}</td><td>${rowData.name}</td><td>${rowData.age}</td>`;
+        table1.appendChild(row1);
+    });
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,533 @@
+// Creating an Empty Array
+let names = [];
+console.log(names);
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React"];
+
+console.log(courses);
+
+// Creating and Initializing an array with values
+let courses = new Array("HTML", "CSS", "Javascript", "React");
+console.log(courses);
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React"];
+
+// Accessing Array Elements
+console.log(courses[0]);
+console.log(courses[1]);
+
+HTML
+CSS
+
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+// Accessing First Array Elements
+let firstItem = courses[0];
+
+console.log("First Item: ", firstItem);
+
+First Item:  HTML
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+// Accessing Last Array Elements
+let lastItem = courses[courses.length - 1];
+
+console.log("Last Item: ", lastItem);
+
+courses.length -> length of the Array 
+Last Item:  React
+
+Modifying the Array Elements
+Elements in an array can be modified by assigning a new value to their corresponding index.
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React"];
+console.log(courses);
+
+courses[1]= "Bootstrap";
+console.log(courses);
+[ 'HTML', 'CSS', 'Javascript', 'React' ]
+[ 'HTML', 'Bootstrap', 'Javascript', 'React' ]
+
+Elements can be added to the array using methods like push() and unshift().
+
+The push() method add the element to the end of the array.
+The unshift() method add the element to the starting of the array.
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React"];
+
+// Add Element to the end of Array
+courses.push("Node.js");
+
+// Add Element to the beginning
+courses.unshift("Web Development");
+
+console.log(courses);
+
+[ 'Web Development', 'HTML', 'CSS', 'Javascript', 'React', 'Node.js' ]
+
+To remove the elements from an array we have different methods like pop(), shift(), or splice().
+
+The pop() method removes an element from the last index of the array.
+The shift() method removes the element from the first index of the array.
+The splice() method removes or replaces the element from the array.
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+console.log("Original Array: " + courses);
+
+// Removes and returns the last element
+let lastElement = courses.pop();
+console.log("After Removing the last elements: " + courses);
+
+// Removes and returns the first element
+let firstElement = courses.shift();
+console.log("After Removing the First elements: " + courses);
+
+// Removes 2 elements starting from index 1
+courses.splice(1, 2);
+console.log("After Removing 2 elements starting from index 1: " + courses);
+
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+
+let len = courses.length;
+
+console.log("Array Length: " + len);
+
+Array Length: 5
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "Javascript", "React", "Node.js"];
+
+// Increase the array length to 7
+courses.length = 7;
+
+console.log("Array After Increase the Length: ", courses);
+
+// Decrease the array length to 2
+courses.length = 2;
+console.log("Array After Decrease the Length: ", courses)
+
+
+Array After Increase the Length:  [ 'HTML', 'CSS', 'Javascript', 'React', 'Node.js', <2 empty items> ]
+Array After Decrease the Length:  [ 'HTML', 'CSS' ]-
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Arrays</h1>
+
+<p id="demo"></p>
+
+<script>
+const cars = ["Honda", "Swift", "Ciaz"];
+document.getElementById("demo").innerHTML = cars;
+</script>
+
+</body>
+</html>
+
+JavaScript Arrays
+Honda,Swift,Ciaz
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Arrays use numbers to access its elements.</p>
+
+<p id="demo"></p>
+
+<script>
+const person = ["John", "Doe", 46];
+document.getElementById("demo").innerHTML = person[2];
+</script>
+
+</body>
+</html>
+
+JavaScript Arrays
+Arrays use numbers to access its elements.
+
+46
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Arrays use numbers to access its elements.</p>
+
+<p id="demo"></p>
+
+<script>
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript"];
+
+// Iterating through for loop
+for (let i = 0; i < courses.length; i++) {
+    // Append each course to the innerHTML of the paragraph
+    document.getElementById("demo").innerHTML += courses[i] + "<br>"; // Use <br> for line breaks
+}
+
+</script>
+
+</body>
+</html>
+
+JavaScript Arrays
+Arrays use numbers to access its elements.
+
+HTML
+CSS
+JavaScript
+
+ document.getElementById("demo").innerHTML += courses[i] ; 
+ if we use withopur <br> tag output will be 
+ Arrays use numbers to access its elements.    HTMLCSSJavaScript
+ 
+ 
+ Another method for display Array one by one
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Courses List</title>
+</head>
+<body>
+
+    <h1>Courses List</h1>
+    <!-- Empty div where the courses will be displayed -->
+    <div id="coursesDisplay"></div>
+
+    <script>
+        // Step 1: Creating an array with course values
+        let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+        // Step 2: Finding the empty div in the HTML
+        let displayElement = document.getElementById('coursesDisplay');
+
+        // Step 3: Looping through the array and adding each course to the page
+        for (let i = 0; i < courses.length; i++) {
+            // Create a new paragraph element
+            let courseElement = document.createElement('p');
+
+            // Set the text of the paragraph to the course name
+            courseElement.textContent = courses[i];
+
+            // Add the paragraph to the div (displayElement)
+            displayElement.appendChild(courseElement);
+        }
+    </script>
+
+</body>
+</html>
+
+Courses List
+HTML
+
+CSS
+
+JavaScript
+
+React
+
+<h2>JavaScript Arrays</h2>
+
+<p>Arrays use numbers to access its elements.</p>
+
+<p id="demo"></p>
+
+<script>
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript"];
+
+// Function to display courses with a delay
+function displayCourses() {
+    for (let i = 0; i < courses.length; i++) {
+        // Set a timeout for each course
+        setTimeout(function() {
+            document.getElementById("demo").innerHTML += courses[i] + "<br>";
+        }, i * 2000); // Delay increases with each iteration
+    }
+}
+
+// Call the function to start displaying courses
+displayCourses();
+
+</script>
+
+
+Arrays use numbers to access its elements.
+
+HTML
+CSS
+JavaScript
+
+Function Declaration: I wrapped the loop in a function called displayCourses.
+setTimeout Usage: Instead of trying to call setTimeout directly with the line of code, I provided a function as the first argument. 
+This is how setTimeout expects a callback function.
+Dynamic Delay: The delay for each setTimeout is calculated as i * 2000, meaning the first course will display after 0 milliseconds, 
+the second after 2000 milliseconds (2 seconds), and the third after 4000 milliseconds (4 seconds).
+This way, each course will appear one after the other with a delay.
+
+Objects
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+
+<p>JavaScript uses names to access object properties.</p>
+<p id="demo"></p>
+
+<script>
+const person = {firstName:"John", lastName:"Doe", age:46};
+document.getElementById("demo").innerHTML = person.firstName;
+</script>
+
+</body>
+</html>
+
+JavaScript uses names to access object properties.
+
+John
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Creating JavaScript Objects</h1>
+<h2>Using an Object Literal</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object:
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+// Display Data from the Object:
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>
+
+Using an Object Literal
+John is 50 years old.
+
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Create an Object
+const person = {};
+
+// Add Properties
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Creating JavaScript Objects</h1>
+<h2>Using an Object Literal</h2>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object:
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+// Display Data from the Object:
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>
+
+John is 50 years old.
+
+// Display lastName from the Object:
+document.getElementById("demo").innerHTML =
+"The last name is " + person.lastName;
+
+// Display lastName from the Object:
+document.getElementById("demo").innerHTML =
+"The last name is " +  person["lastName"];
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>Objects are Mutable</h2>
+
+<p>Changes to a copy of an object will also change the original object:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age:50,
+  eyeColor: "blue"
+};
+
+// Create a Copy
+const x = person;
+
+// Change Age
+x.age = 10;
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>
+John is 10 years old.
+
+// Creating an Array and Initializing with Values
+let courses = ["HTML", "CSS", "JavaScript", "React"];
+
+// Iterating through for loop
+for (let i = 0; i < courses.length; i++) {
+    console.log(courses[i])
+}
+
+HTML
+CSS
+JavaScript
+React
+
+Basic for each()
+const arr = [1, 2, 3, 4, 5];
+
+arr.forEach((item) => {
+    console.log(item);
+});
+
+1
+2
+3
+4
+5
+
+// JavaScript Array forEach() Method
+
+// Original array
+const items = [12, 24, 36];
+const copy = [];
+
+items.forEach(function (item) {
+    copy.push(item);
+});
+
+console.log(copy);
+
+[ 12, 24, 36 ]
+
+Tables
+Static Table
+Definition: A static table is hard-coded into the HTML document. The table's structure and data are fixed, 
+and any changes must be manually updated by editing the HTML.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Table Example</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Static Table</h2>
+    <table>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+        <tr>
+            <td>Row 3, Cell 1</td>
+            <td>Row 3, Cell 2</td>
+            <td>Row 3, Cell 3</td>
+        </tr>
+    </table>
+	<h2>Dynamic Table</h2>
+	<table id="dynamicTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </table>
+	<script>
+        const data = [
+            { id: 1, name: "Alice", age: 25 },
+            { id: 2, name: "Bob", age: 30 },
+            { id: 3, name: "Charlie", age: 22 }
+        ];
+
+        const table = document.getElementById('dynamicTable');
+
+        data.forEach((item) => {
+            const row = table.insertRow();
+            row.insertCell(0).innerHTML = item.id;
+            row.insertCell(1).innerHTML = item.name;
+            row.insertCell(2).innerHTML = item.age;
+        });
+    </script>
+</body>
+</html>
+Dynamic Table
+Definition: A dynamic table is generated and/or updated programmatically. 
+The table's content can change based on user input, database queries, or external data sources (like APIs).

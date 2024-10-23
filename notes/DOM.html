@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Methods Example</title>
+    <style>
+        .myClass {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        // 1. Create a new <div> element
+        const newDiv = document.createElement('div');
+        console.log('Created new div:', newDiv);
+
+        // 2. Set an ID and class for the new <div>
+        newDiv.setAttribute('id', 'newDivID');
+        newDiv.setAttribute('class', 'myClass');
+        console.log('After setting attributes:', newDiv);
+
+        // 3. Add some content to the <div>
+        newDiv.innerHTML = '<p>This is a paragraph inside the div.</p>';
+        console.log('After adding innerHTML:', newDiv);
+
+        // 4. Append the new <div> to the container
+        const container = document.getElementById('container');
+        container.appendChild(newDiv);
+        console.log('Appended new div to container:', container);
+
+        // 5. Select the paragraph inside the new div
+        const paragraph = newDiv.querySelector('p');
+        console.log('Selected paragraph inside the div:', paragraph);
+
+        // 6. Modify the text content of the paragraph
+        paragraph.textContent = 'This text was modified by JavaScript.';
+        console.log('Modified paragraph text content:', paragraph);
+
+        // 7. Add an event listener to the new <div>
+        newDiv.addEventListener('click', () => {
+            alert('Div clicked!');
+        });
+        console.log('Added event listener to new div.');
+
+        // 8. Modify the style of the new <div> dynamically
+        newDiv.style.backgroundColor = 'lightgray';
+        newDiv.style.padding = '10px';
+        console.log('Modified div style:', newDiv);
+
+        // 9. Create another element and insert it before the paragraph
+        const newHeading = document.createElement('h2');
+        newHeading.textContent = 'I am inserted before the paragraph';
+        newDiv.insertBefore(newHeading, paragraph);
+        console.log('Inserted new heading before paragraph:', newDiv);
+
+        // 10. Remove the paragraph element from the div
+        //newDiv.removeChild(paragraph);
+        //console.log('Removed paragraph from div:', newDiv);
+
+        // 11. Use querySelector to select and log the new heading
+        const selectedHeading = document.querySelector('#newDivID h2');
+        console.log('Selected heading with querySelector:', selectedHeading);
+
+        // 12. Remove the entire new div from the container
+        //newDiv.remove();
+        //console.log('Removed the entire new div from the DOM.');
+    </script>
+</body>
+</html>

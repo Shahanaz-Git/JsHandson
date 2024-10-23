@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XMLHttpRequest Example</title>
+</head>
+<body>
+<h1>Data from JSONPlaceholder API</h1>
+<pre id="data"></pre>
+
+<script>
+// Create an XMLHttpRequest object
+var xhr = new XMLHttpRequest();
+
+// Set the API endpoint URL
+var url = 'https://jsonplaceholder.typicode.com/posts'; // API endpoint
+
+// Open a GET request
+xhr.open('GET', url, true);
+
+// Set response type to JSON
+xhr.responseType = 'json';
+
+// Send the request
+xhr.send();
+
+// Handle the response
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        console.log('Response:', xhr.response);
+        document.getElementById('data').innerHTML = JSON.stringify(xhr.response, null, 2);
+    } else {
+        console.log('Error:', xhr.statusText);
+    }
+};
+
+// Handle errors
+xhr.onerror = function() {
+    console.log('Error:', xhr.statusText);
+};
+
+// Handle progress
+xhr.onprogress = function(event) {
+    console.log('Loaded:', event.loaded, 'Total:', event.total);
+};
+</script>
+</body>
+</html>
